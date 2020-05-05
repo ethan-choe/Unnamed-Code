@@ -1,0 +1,52 @@
+<!-- Dongjoon Ethan Choe -->
+
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <!-- bootstrap -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+    <!-- web-gl -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>FlappyBird</title>
+    <link rel="shortcut icon" href="TemplateData/favicon.ico">
+    <link rel="stylesheet" href="TemplateData/style.css">
+    <script src="TemplateData/UnityProgress.js"></script>
+    <script src="Build/UnityLoader.js"></script>
+    <script>
+      var unityInstance = UnityLoader.instantiate("unityContainer", "Build/FlappyBirdWebGL.json", {onProgress: UnityProgress});
+    </script>
+    
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="/game">Game</a>
+            </li>
+          <li class="nav-item">
+              <form action="/logout?_method=DELETE" method="POST">
+                  <button type="submit">Log Out</button>
+              </form>
+          </li>
+        </ul>
+    </nav>
+
+    <div class="webgl-content">
+      <div id="unityContainer" style="width: 480px; height: 854px;"></div>
+      <div class="footer">
+        <div class="webgl-logo"></div>
+        <div class="fullscreen" onclick="unityInstance.SetFullscreen(1)"></div>
+        <div class="title">FlappyBird</div>
+      </div>
+    </div>
+  </body>
+</html>
